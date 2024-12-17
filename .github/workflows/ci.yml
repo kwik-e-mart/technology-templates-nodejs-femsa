@@ -45,5 +45,7 @@ jobs:
     steps:
       - name: Install nullplatform cli
         run: curl https://cli.nullplatform.com/install.sh | sh
+      - name: Linter
+        run: ./linter.sh
       - name: End nullplatform CI
         run: np build update --status ${{ needs.build.outputs.status }}
